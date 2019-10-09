@@ -1,0 +1,39 @@
+{% set version = "0.5.5" %}
+
+package:
+  name: grcov
+  version: {{ version }}
+
+source:
+  url: https://github.com/mozilla/grcov/releases/download/v{{ version }}/grcov-linux-x86_64.tar.bz2  # [linux]
+  sha256: "a06abfdc55dd0300d70ab7a46b62cc79d7b9e618479cd4ca2418b1be333738fe"                         # [linux]
+  url: https://github.com/mozilla/grcov/releases/download/v{{ version }}/grcov-osx-x86_64.tar.bz2    # [osx]
+  sha256: "bf1cf9ccda448b5f2750db6100b53b78d97977edf3eb2d4821c73b566f09ddf7"                         # [osx]
+  url: https://github.com/mozilla/grcov/releases/download/v{{ version }}/grcov-win-x86_64.tar.bz2    # [win]
+  sha256: "9582280126d8bdd5e1a6b14db5191a03a134f1c1a1301a4905b2fcf27b84bdf8"                         # [win]
+
+build:
+  number: 0
+  skip: True  # [not x86_64]
+
+requirements:
+  build: []
+  host: []  # Empty host dependency section
+
+test:
+  commands:
+    - test -f ${PREFIX}/bin/grcov                          # [unix]
+    - if exist %SCRIPTS%\grcov.exe (exit 0) else (exit 1)  # [win]
+
+about:
+  home: https://github.com/mozilla/grcov
+  license: Mozilla Public 2.0 (MPL 2.0)
+  license_family: OTHER
+  summary: Rust tool to collect and aggregate code coverage data for multiple source files
+  description: |
+    grcov collects and aggregates code coverage information for multiple source files.
+    This is a project initiated by Mozilla to gather code coverage results on Firefox.
+
+extra:
+  recipe-maintainers:
+    - zhihao.yuan
