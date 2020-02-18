@@ -1,4 +1,4 @@
-{% set version = "0.5.5" %}
+{% set version = "0.5.9" %}
 
 package:
   name: grcov
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://github.com/mozilla/grcov/releases/download/v{{ version }}/grcov-linux-x86_64.tar.bz2  # [linux]
-  sha256: "a06abfdc55dd0300d70ab7a46b62cc79d7b9e618479cd4ca2418b1be333738fe"                         # [linux]
+  sha256: "2142df24938b6e56b6b84983d5492c53af486535446cacbd26715c9bfa1e89e4"                         # [linux]
   url: https://github.com/mozilla/grcov/releases/download/v{{ version }}/grcov-osx-x86_64.tar.bz2    # [osx]
-  sha256: "bf1cf9ccda448b5f2750db6100b53b78d97977edf3eb2d4821c73b566f09ddf7"                         # [osx]
+  sha256: "bf7fc40d11aad717ca65503b216301dd16ddcf78ec3a79e0eea330123e29b17e"                         # [osx]
   url: https://github.com/mozilla/grcov/releases/download/v{{ version }}/grcov-win-x86_64.tar.bz2    # [win]
-  sha256: "9582280126d8bdd5e1a6b14db5191a03a134f1c1a1301a4905b2fcf27b84bdf8"                         # [win]
+  sha256: "6200f2130e663eea3f0c9b0dc6430620d145785e1d5f20e79b2caf0375d8f3ce"                         # [win]
 
 build:
   number: 0
